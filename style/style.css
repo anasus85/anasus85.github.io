@@ -1,0 +1,207 @@
+/* Importaciones */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Oswald&display=swap');
+
+/* Reseteo */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Generales */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #67666e;
+}
+header {
+    margin-top: 80px;
+    padding: 0.5em;
+}
+h1 {
+    font-family: 'Oswald', sans-serif;
+}
+
+p {
+    font-size: 1.4em;
+}
+
+/* Imágenes */
+.logo-small {
+    height: 80px;
+   }
+.logo-small-b {
+    height: 80px;
+    display: block;
+}
+.logo-small-n {
+    height: 80px;
+    display: none;
+}
+
+
+
+/* Nav */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    background-color: white;
+    box-shadow: 0 2px 4px grey;
+    transition: all 500ms ease-in-out;
+}
+
+nav.white {
+    background-color: transparent;
+    box-shadow: initial;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+@media (max-width:720px){
+    nav {
+        justify-content: flex-end;
+    }
+    nav ul {
+        display: none;
+    }
+}
+    nav ul li a {
+    color: #67666e;
+    text-decoration: none;
+    font-size: 1.4em;
+    margin: 0 0.5em;
+    padding-bottom: 0.3em;
+}
+
+nav.white ul li a {
+    color: white;
+}
+
+nav ul li a:hover {
+    border-bottom: 1.5px solid #67666e;
+}
+
+nav.white ul li a:hover {
+    border-bottom: 1.5px solid white;
+}
+
+nav ul li a.active {
+    border-bottom: 1.5px solid #67666e;
+}
+
+nav.white ul li a.active {
+    border-bottom: 1.5px solid white;
+}
+
+/* Burger */
+
+.burger {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    z-index: 100;
+    display: none;
+}
+@media (max-width: 720px){
+    .burger {display: block;
+    }
+
+}
+.burger .bar {
+    height: 3px;
+    width: 35px;
+    background-color: #67666e;
+    margin: 8px auto;
+    transition: all 700ms ease-in-out;
+}
+.burger.white .bar {
+    background-color: white;
+}
+
+.burger.open .bar.up {
+    transform: translateY(11px) rotateZ(45deg);
+}
+    .burger.open .bar.middle {
+    width: 0;
+}
+    .burger.open .bar.down {
+    transform: translateY(-11px) rotateZ(-45deg);
+}
+/* Aside */
+aside {
+    position: fixed; 
+    top: 0;
+    left:-360px;
+    z-index: 50;
+    height: 100vh;
+    width: 360px;     /* tradicional en los laterales */
+    background-color: #1e1e2d;
+    padding: 100px 20px 20px;    /* arriba, derecha-izda, abajo  */
+    transition: all 600ms ease-in-out;
+
+}
+aside.open {
+    left: 0;}
+
+aside .item {
+    padding: 1.5em 0;}
+
+aside .item:last-child { /*para que el copyright esté siempre abajo*/
+    position: absolute;  /* cuidado cuando el padre no esta posicionado, se va arriba del todo (poner como "relative" */
+    bottom: 20px; /*para repetir el padding*/
+    left: 20px;
+    }
+aside hr {
+    border: none;
+    height: 1px;
+    background-color: #67666e;
+}
+aside .item a, aside .item a:visited {
+    color: #67666e;
+    text-decoration: none;
+}
+aside .item a:hover, aside .item a.active {
+    color: white;
+}
+
+/* Hero */
+
+.hero {
+    margin-top:0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/windrader-1639567_1920.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero .titles {
+    color: white;
+    margin-bottom: 8em;
+    border-left: 4px solid white;
+    padding-left: 2em;
+}
+
+.hero .titles h1 {
+    font-size: 4em;
+}
+
+.hero .titles h2 {
+    font-size: 3em;
+}
